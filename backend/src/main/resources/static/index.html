@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Oracle Full Stack Homework</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header>
+    <div>
+      <p class="eyebrow">PL/SQL · Java · TypeScript</p>
+      <h1>Oracle Full Stack Homework</h1>
+      <p class="subtitle">Three database tasks exposed through a Spring Boot REST API.</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>1. Age category</h2>
+      <form id="age-form">
+        <label for="age">Age</label>
+        <div class="form-row">
+          <input id="age" name="age" type="number" min="0" step="1" value="35" required>
+          <button type="submit">Describe</button>
+        </div>
+      </form>
+      <output id="age-result" class="result" aria-live="polite"></output>
+    </section>
+
+    <section class="card">
+      <h2>2. Calculate π</h2>
+      <form id="pi-form">
+        <label for="precision">Iterations(precision)</label>
+        <div class="form-row">
+          <input id="precision" name="precision" type="number" min="1" max="1000" value="10" required>
+          <button type="submit">Calculate</button>
+        </div>
+      </form>
+      <output id="pi-result" class="result mono" aria-live="polite"></output>
+    </section>
+
+    <section class="card wide">
+      <div class="section-heading">
+        <h2>3. Unpaid invoices</h2>
+        <button id="invoice-load" type="button">Load invoices</button>
+      </div>
+      <div id="invoice-result" class="table-container" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <footer>Oracle logic remains close to the data; Java exposes a reusable web API.</footer>
+</body>
+</html>
