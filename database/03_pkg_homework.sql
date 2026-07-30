@@ -100,18 +100,19 @@ create or replace PACKAGE BODY pkg_homework as
     ) return varchar2
     is
         l_description age_category.description%type;
+        v_age number:=least(p_age, 999);
     begin
 		v_rowid := logger( p_msg_type => 'START', p_msg_header => 'get_age_description', p_msg_body => null);
 		
         if p_age is null or p_age < 0 or p_age != trunc(p_age) then
 			v_rowid := logger( p_msg_type => 'ERROR', p_msg_header => null, p_msg_body => 'Amžius turi būti teigiamas sveikasis skaičius', p_rowid => v_rowid);
             raise_application_error(-20001, 'Amžius turi būti teigiamas sveikasis skaičius');
-        end if;
+        end if;    
 
         select description
           into l_description
         from age_category
-        where p_age between age_from  and age_to;
+        where v_age between age_from  and age_to;
 		
 		v_rowid := logger( p_msg_type => 'SUCCESS', p_msg_header => null, p_msg_body => l_description, p_rowid => v_rowid);
         return l_description;
