@@ -2,7 +2,7 @@ insert into age_category(age_from, age_to, description) values (0, 7, 'You are i
 insert into age_category(age_from, age_to, description) values (8, 18, 'You are schoolchild');
 insert into age_category(age_from, age_to, description) values (19, 39, 'You are adult');
 insert into age_category(age_from, age_to, description) values (40, 54, 'You are in middle-age');
-insert into age_category(age_from, age_to, description) values (55, null, 'You are aged');
+insert into age_category(age_from, age_to, description) values (55, 999, 'You are aged');
 
 insert into invoice values (1001, date '2026-01-10', 100.00, 'EUR');
 insert into invoice values (1002, date '2026-01-11', 200.00, 'EUR');
