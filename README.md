@@ -195,6 +195,19 @@ ORA-06512: at "VIM.PKG_HOMEWORK", line 113
 ORA-06512: at "VIM.PKG_HOMEWORK", line 93
 ORA-06512: at line 5
 ```
+Provoking a "character string buffer too small" error
+```sql
+BEGIN
+    DBMS_OUTPUT.PUT_LINE(
+        pkg_homework.get_age_description(1)
+    );
+END;
+
+ORA-06502: PL/SQL: value or conversion error: character string buffer too small
+ORA-06512: at "VIM.PKG_HOMEWORK", line 114
+ORA-06512: at "VIM.PKG_HOMEWORK", line 97
+ORA-06512: at line 5
+```
 
 ### 3. Logger
 
@@ -208,6 +221,7 @@ Example output:
 
 | EVENT_DATE | MSG_TYPE | MSG_HEADER | MSG_BODY |
 |------------|----------|------------|----------|
+2026.07.30 17:50:27 | ERROR | get_age_description | -6502 ORA-06502: PL/SQL: value or conversion error: character string buffer too small
 2026.07.30 16:32:50 | ERROR | get_age_description | -20001 ORA-20001: Amžius turi buti teigiamas sveikasis skaicius
 2026.07.30 16:03:16 | SUCCESS | get_age_description | You are schoolchild
 2026.07.30 16:03:16 | SUCCESS | get_unpaid_invoices | 
