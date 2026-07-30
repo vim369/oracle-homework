@@ -8,6 +8,7 @@ begin
     dbms_output.put_line('Age 7:  ' || pkg_homework.get_age_description(7));
     dbms_output.put_line('Age 18: ' || pkg_homework.get_age_description(18));
     dbms_output.put_line('Age 40: ' || pkg_homework.get_age_description(40));
+    dbms_output.put_line('Age 40: ' || pkg_homework.get_age_description(1155));
 
     dbms_output.put_line('PI/10 iterations: ' || pkg_homework.calculate_pi(10));
     commit;
